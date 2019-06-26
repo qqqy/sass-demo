@@ -1,0 +1,31 @@
+@import 'reset';
+
+%margin-padding {
+  padding: 10px;
+  margin: 10px;
+}
+
+@mixin padding-margin($pix) {
+  padding: $pix;
+  margin: $pix;
+}
+
+#header {
+  @extend %margin-padding;
+  .header-element {
+    @extend %margin-padding;
+    background-color: blue;
+  }
+  &:hover {
+    height: 100px;
+  }
+  padding: 10px;
+}
+
+.wrapper {
+  @include padding-margin(10px);
+  .test{
+    @include padding-margin(20px);
+  }
+}
+
